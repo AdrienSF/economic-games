@@ -15,6 +15,7 @@ class BaseEngine(Session):
 
 
     def run_lobby(self, _=None):
+        self.hide_trial()
         # do lobby things to pretend there are other human agents
         sprites = []
         player = None
@@ -103,7 +104,7 @@ class InvestmentGameEngine(BaseEngine): #does the bot start with money? does mon
 
         # get bot move
         move = self.bot.get_move()
-        self.log({'bot_mmove': move})
+        self.log({'bot_move': move})
 
         # add money to the player
         self.player.money += move
